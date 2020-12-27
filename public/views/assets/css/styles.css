@@ -1,0 +1,17 @@
+body {
+    width: auto; 
+    height: auto; 
+    background-color: #212529;
+}
+
+.img-home {
+    width: 300px;
+    height: 250px;
+}
+
+@media (min-width:768px) {
+  .img-home {
+    width: 500px;
+    height: 400px;
+  }
+}

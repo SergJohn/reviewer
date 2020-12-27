@@ -1,0 +1,19 @@
+{
+  "name": "reviewer",
+  "version": "1.0.0",
+  "description": "College Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./index.js"
+  },
+  "author": "mrosa_2018358",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
