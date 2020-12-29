@@ -8,7 +8,12 @@
         {
             "id": 2,
             "title": "The Karamazov's Brothers",
-            "author": "Dostoevsky" 
+            "author": "Dostoyevsky" 
+        },
+        {
+            "id": 3,
+            "title": "The Stranger",
+            "author": "Albert Camus" 
         }
     ]
 }

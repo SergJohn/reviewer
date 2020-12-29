@@ -6,7 +6,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || "3000";
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -16,15 +15,18 @@ app.use(express.urlencoded({extended: true})); //We allow the data sent from the
 app.use(express.json()); //We include support for JSON that is coming from the client
 
 app.get("/", (req, res) => {
-  res.render('index');
+    res.render('index');
 });
 
 app.get("/books", (req, res) => {
     res.render('books');
 });
 
-app.get('/get/books', (req, res) => {
+app.get("/about", (req, res) => {
+    res.render('about');
+});
 
+app.get('/get/books', (req, res) => {
     res.setHeader('Content-Type', 'text/plain');
     let content = fs.readFileSync('books.json', 'utf8'); 
     res.end(content);
