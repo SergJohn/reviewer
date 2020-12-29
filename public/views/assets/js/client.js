@@ -1,63 +1,29 @@
 console.log('client javascript running');
 
-const booksElement = document.querySelector('.books');
-const API_BOOKS_URL = 'https://5000-d3f322ab-7404-43e7-aab7-5032e8f9499b.ws-eu03.gitpod.io/books';
+const booksElement = document.getElementById('books');
+const xhttp = new XMLHttpRequest();
 
-listBooks();
+(function(){
+    requestBooks();
+}());
 
-function listBooks() {
-    booksElement.innerHTML = '';
-    fetch(API_BOOKS_URL)
-        .then(response => response.json())
-        .then(books => {
-            console.log(books);
-            console.log('running until here');
+function requestBooks(){
+    
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            bookRender(data);
+        }
+    };
+    xhttp.open("GET", "get/books", true);
+    xhttp.send();
+}
 
-            for (let i = 0; i < books.length; i++){
-                console.log(books[i]);
-                const div = document.createElement('div');
+function bookRender(data){
+    console.log(data.books[0]);
 
-                const header = document.createElement('h3');
-                header.textContent = books[i].title;
-
-                const contents = document.createElement('p');
-                contents.textContent = books[i].author;
-
-                div.appendChild(header);
-                div.appendChild(contents);
-
-                booksElement.appendChild(div);
-            }
-
-            
-            // books.forEach(book => {
-            //     const div = document.createElement('div');
-            //     const header = document.createElement('h3');
-            //     header.textContent = book.title;
-
-            //     const contents = document.createElement('p');
-            //     contents.textContent = book.author;
-
-            //     div.appendChild(header);
-            //     div.appendChild(contents);
-
-            //     booksElement.appendChild(div);
-            // });
-
-            // return books.map(function(book) {
-            //     const div = document.createElement('div');
-            //     const header = document.createElement('h3');
-            //     header.textContent = book.title;
-
-            //     const contents = document.createElement('p');
-            //     contents.textContent = book.author;
-
-            //     div.appendChild(header);
-            //     div.appendChild(contents);
-
-            //     booksElement.appendChild(div);
-            // })
-
-        });
-
+    const h1 = document.createElement('H1');
+    h1.classList.add('text-light');
+    h1.innerHTML = data.books[0].title;
+    booksElement.appendChild(h1);
 }

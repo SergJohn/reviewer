@@ -2,10 +2,10 @@
   "name": "reviewer",
   "version": "1.0.0",
   "description": "College Project",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./app.js"
   },
   "author": "mrosa_2018358",
   "license": "ISC",
