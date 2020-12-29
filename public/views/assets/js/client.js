@@ -44,6 +44,17 @@ function bookRender(data){
         h3.classList.add('text-light');
         h3.textContent = data.books[i].author;
         div.appendChild(h3);
+
+        let anchor = document.createElement('A');
+        anchor.classList.add('btn-to-reviews');
+
+        let att = document.createAttribute('href');
+        att.value = "../review.html";
+        anchor.setAttributeNode(att);
+
+        anchor.innerHTML = "Check Reviews";
+        div.appendChild(anchor);
+
         // booksElement.appendChild(h3);
         booksElement.appendChild(div);
     }

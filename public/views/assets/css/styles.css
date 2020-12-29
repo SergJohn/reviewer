@@ -27,3 +27,18 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.btn-to-reviews {
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #212529;
+    color: #fff;
+    font-weight: bold;
+}
+
+.btn-to-reviews:hover {
+    background-color: #fff;
+    color: #212529;
+    text-decoration: none;
+}
