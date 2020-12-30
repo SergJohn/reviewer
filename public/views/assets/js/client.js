@@ -33,7 +33,6 @@ async function bookRender(data) {
         let h1 = document.createElement('H1');
         h1.classList.add('text-light');
         h1.classList.add('text-uppercase');
-        // h1.classList.add('bg-dark');
         h1.innerHTML = data.books[i].title;
 
         // Appending book's name to the DIV
@@ -91,18 +90,40 @@ async function bookRender(data) {
         divToggle.classList.add('text-light');
         divToggle.classList.add('separator');
 
+        // Creating a new div to hold the element form
+        let divToggleForm = document.createElement('DIV');
+        divToggleForm.classList.add('collapse');
+        divToggleForm.classList.add('text-light');
+        divToggleForm.classList.add('separator');
+
         // Inserting the necessary id to make it work
         let id = document.createAttribute('id');
         id.value = "openReview";
         divToggle.setAttributeNode(id);
 
+        // Inserting the necessary id to make it work
+        let id2 = document.createAttribute('id');
+        id2.value = "openForm";
+        divToggleForm.setAttributeNode(id2);
+
         // Retreiving the data inside the new DIVTOGGLE
         let p = document.createElement('P');
         p.innerHTML = data.books[i].title;
 
+        // Created to see the second toggle working
+        let formDeclaration = document.createElement('H3');
+        formDeclaration.innerHTML = "Make your own review";
+
+        // Now make the elements to receive input and create a new review 
+
+
+        divToggleForm.appendChild(formDeclaration);
+
         // Appending to the MAIN DIV
         divToggle.appendChild(p);
-        // booksElement.appendChild(divToggle);
+        
+        booksElement.appendChild(divToggle);
+        booksElement.appendChild(divToggleForm);
 
         // Calling function to get the available reviews
         let availableReviews = await requestReview();
@@ -116,7 +137,6 @@ async function bookRender(data) {
 
             let nameh3 = document.createElement('h3');
             nameh3.innerHTML = availableReviews.reviews[j].name;
-            
 
             let contentp = document.createElement('P');
             contentp.innerHTML = availableReviews.reviews[j].content;
@@ -128,8 +148,6 @@ async function bookRender(data) {
                 booksElement.appendChild(divToggle);
             }
         }
-
-
 
     }
 
