@@ -9,6 +9,11 @@
             "book": "The Stranger",
             "name": "Albert",
             "content": "I loved to write this book"
+        },
+        {
+            "book": "The old and the sea",
+            "name": "Juliet",
+            "content": "Nice book, very descriptive"
         }
     ]
 }

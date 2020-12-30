@@ -19,7 +19,7 @@ function requestBooks() {
     xhttp.send();
 }
 
-function bookRender(data) {
+async function bookRender(data) {
     console.log(data.books[0]);
 
 
@@ -84,7 +84,34 @@ function bookRender(data) {
 
         // Appending to the MAIN DIV
         divToggle.appendChild(p);
-        booksElement.appendChild(divToggle);
+        // booksElement.appendChild(divToggle);
+
+        // Calling function to get the available reviews
+        let availableReviews = await requestReview();
+        console.log(availableReviews.reviews[0].name);
+
+        for (var j = 0; j < availableReviews.reviews.length; j++) {
+            // Creating element to add the reviews
+            let nameP = document.createElement('P');
+            nameP.innerHTML = availableReviews.reviews[j].name;
+
+            if (availableReviews.reviews[j].book === data.books[i].title) {
+                divToggle.appendChild(nameP);
+                booksElement.appendChild(divToggle);
+            }
+        }
+
+
+
+    }
+
+    async function requestReview() {
+
+        let test = await fetch('/get/reviews')
+            .then(response => response.json())
+            .then(data => data);
+
+        return test;
     }
 
 }
