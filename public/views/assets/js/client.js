@@ -47,22 +47,40 @@ async function bookRender(data) {
         // Appending the author's name to the DIV
         div.appendChild(h3);
 
+        let divForBtn = document.createElement('DIV');
+        divForBtn.classList.add('separator-in-col');
+
         // BUTTON to toggle the reviews and form
         let btn = document.createElement('BUTTON');
-        btn.classList.add('btn-primary');
+        btn.classList.add('btn-to-reviews');
+
+        let btnForm = document.createElement('BUTTON');
+        btnForm.classList.add('btn-to-reviews');
 
         // Creating elements to make the toggle available using bootstrap
         let att = document.createAttribute('data-toggle');
         att.value = "collapse";
         let att2 = document.createAttribute('data-target');
-        att2.value = "#openForm";
+        att2.value = "#openReview";
         btn.setAttributeNode(att);
         btn.setAttributeNode(att2);
 
         btn.innerHTML = "Check Reviews";
 
+        let attForm = document.createAttribute('data-toggle');
+        attForm.value = "collapse";
+        let attForm2 = document.createAttribute('data-target');
+        attForm2.value = "#openForm";
+        btnForm.setAttributeNode(attForm);
+        btnForm.setAttributeNode(attForm2);
+
+        btnForm.innerHTML = "Make a review";
+
         // Appending the BUTTON to the DIV
-        div.appendChild(btn);
+        divForBtn.appendChild(btn);
+        divForBtn.appendChild(btnForm);
+
+        div.appendChild(divForBtn);
 
         // Appending the external DIV to the MAIN DIV
         booksElement.appendChild(div);
@@ -75,7 +93,7 @@ async function bookRender(data) {
 
         // Inserting the necessary id to make it work
         let id = document.createAttribute('id');
-        id.value = "openForm";
+        id.value = "openReview";
         divToggle.setAttributeNode(id);
 
         // Retreiving the data inside the new DIVTOGGLE
@@ -88,7 +106,7 @@ async function bookRender(data) {
 
         // Calling function to get the available reviews
         let availableReviews = await requestReview();
-        console.log(availableReviews.reviews[0].name);
+        console.log(availableReviews.reviews[0]);
 
         for (var j = 0; j < availableReviews.reviews.length; j++) {
             // Creating element to add the reviews
