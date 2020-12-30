@@ -92,11 +92,21 @@ async function bookRender(data) {
 
         for (var j = 0; j < availableReviews.reviews.length; j++) {
             // Creating element to add the reviews
-            let nameP = document.createElement('P');
-            nameP.innerHTML = availableReviews.reviews[j].name;
+
+            let contentDiv = document.createElement('DIV');
+            contentDiv.classList.add('distintc');
+
+            let nameh3 = document.createElement('h3');
+            nameh3.innerHTML = availableReviews.reviews[j].name;
+            
+
+            let contentp = document.createElement('P');
+            contentp.innerHTML = availableReviews.reviews[j].content;
 
             if (availableReviews.reviews[j].book === data.books[i].title) {
-                divToggle.appendChild(nameP);
+                contentDiv.appendChild(nameh3);
+                contentDiv.appendChild(contentp);
+                divToggle.appendChild(contentDiv);
                 booksElement.appendChild(divToggle);
             }
         }
