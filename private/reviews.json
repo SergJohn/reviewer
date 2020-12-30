@@ -1,0 +1,14 @@
+{
+    "reviews": [
+        {
+            "book": "The Stranger",
+            "name": "Mario",
+            "content": "The best book I have read"
+        },
+        {
+            "book": "The Stranger",
+            "name": "Albert",
+            "content": "I loved to write this book"
+        }
+    ]
+}

@@ -32,6 +32,12 @@ app.get('/get/books', (req, res) => {
     res.end(content);
 });
 
+app.get('/get/reviews', (req, res) => {
+    res.setHeader('Content-Type', 'text/plain');
+    let contentReview = fs.readFileSync('reviews.json', 'utf8'); 
+    res.end(contentReview);
+});
+
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
 });
