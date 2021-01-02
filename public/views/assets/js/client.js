@@ -114,14 +114,73 @@ async function bookRender(data) {
         let formDeclaration = document.createElement('H3');
         formDeclaration.innerHTML = "Make your own review";
 
-        // Now make the elements to receive input and create a new review 
+        // Now make the elements to receive input and create a new review
+        let form = document.createElement('FORM');
+        form.classList.add('review-form');
+        
+        // Create labels
+        // let labelName = document.createElement('LABEL');
+        // labelName.classList.add('text-light');
+        // let forNameLabel = document.createAttribute('for');
+        // forNameLabel.value = "name";
+        // labelName.setAttributeNode(forNameLabel);
 
+        let labelName = document.createElement('H4');
+        labelName.innerHTML = "Your name";
+
+        let labelContent = document.createElement('H4');
+        labelContent.innerHTML = "Write review";
+
+        // Create inputs
+        // Input for name
+        let inputName = document.createElement('INPUT');
+        let typeName = document.createAttribute('type');
+        typeName.value = "text";
+        let nameName = document.createAttribute('name');
+        nameName.value = "name";
+        let idNameName = document.createAttribute('id');
+        idNameName.value = "name";
+        inputName.setAttributeNode(typeName);
+        inputName.setAttributeNode(nameName);
+        inputName.setAttributeNode(idNameName);
+
+        // Input for review
+        let inputContent = document.createElement('INPUT');
+        let typeContent = document.createAttribute('type');
+        typeContent.value = "text";
+        let nameContent = document.createAttribute('name');
+        nameContent.value = "content";
+        let idNameContent = document.createAttribute('id');
+        idNameContent.value = "content";
+        inputContent.setAttributeNode(typeContent);
+        inputContent.setAttributeNode(nameContent);
+        inputContent.setAttributeNode(idNameContent);
+
+        // Creat submit button
+        let btnSubmit = document.createElement('BUTTON');
+        btnSubmit.classList.add('button-primary');
+        btnSubmit.innerHTML = "Send Review";
 
         divToggleForm.appendChild(formDeclaration);
 
         // Appending to the MAIN DIV
         divToggle.appendChild(p);
         
+        // Add label for name on divToggleForm
+        divToggleForm.appendChild(labelName);
+
+        // Add input for name on divToggleForm
+        divToggleForm.appendChild(inputName);
+
+        // Add label for content on divToggleForm
+        divToggleForm.appendChild(labelContent);
+
+        // Add input for content on divToggleForm
+        divToggleForm.appendChild(inputContent);
+
+        // Add submit button on divToggleForm
+        divToggleForm.appendChild(btnSubmit);
+
         booksElement.appendChild(divToggle);
         booksElement.appendChild(divToggleForm);
 
