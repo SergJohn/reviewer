@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../assets/css/Header-Blue.css">
     <link rel="stylesheet" href="../assets/css/styles.css">
-    
+
 </head>
 
 <body>
@@ -40,22 +40,32 @@
                 </div>
             </nav>
             <div class="row">
-                <div id="books" class="col-12"></div>
-                <!-- <div id="openForm" class="collapse">
-                    <form action="">
-                        <h3>form to collect data</h3>
+                
+                <div id="openForm" class="collapse">
+                    <form class="review-form">
+                        <label for="name">Book</label>
+                        <input class="u-full-width" type="text" name="book" id="book">
+                        <label for="name">Name</label>
+                        <input class="u-full-width" type="text" name="name" id="name">
+                        <label for="content">Review</label>
+                        <textarea class="u-full-width" type="text" name="content" id="content"></textarea>
+                        <button class="button-primary">Send Your Review</button>
                     </form>
-                </div> -->
+                </div>
+                <div id="books" class="col-12"></div>
             </div>
-            
+
         </div>
     </div>
     <footer style="width: auto; height: auto; background-color: #212529;">
-        <div class="container text-center" style="margin-top: 15px; margin-bottom: 15px;"><span class="text-muted"> mrosa_2018358 &copy; 2020</span></div>
+        <div class="container text-center" style="margin-top: 15px; margin-bottom: 15px;"><span class="text-muted">
+                mrosa_2018358 &copy; 2020</span></div>
     </footer>
     <script src="./assets/js/client.js"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="./assets/js/clientForm.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
