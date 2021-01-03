@@ -23,5 +23,10 @@
   "book": "the stranger",
   "name": "Mikhail",
   "content": "This is the best student project ever!!!"
+ },
+ {
+  "book": "1984",
+  "name": "mrosa",
+  "content": "Amazing work from George Orwell!"
  }
 ]

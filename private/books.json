@@ -13,5 +13,30 @@
             "id": 3,
             "title": "The Stranger",
             "author": "Albert Camus" 
+        },
+        {
+            "id": 4,
+            "title": "1984",
+            "author": "George Orwell" 
+        },
+        {
+            "id": 5,
+            "title": "Citizen Soldiers",
+            "author": "Stephen E. Ambrose" 
+        },
+        {
+            "id": 6,
+            "title": "Nausea",
+            "author": "Jean-Paul Sartre" 
+        },
+        {
+            "id": 7,
+            "title": "Waiting for Godot",
+            "author": "Samuel Beckett" 
+        },
+        {
+            "id": 8,
+            "title": "He and His Man",
+            "author": "J. M. Coetzee" 
         }
 ]
