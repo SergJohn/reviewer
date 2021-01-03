@@ -20,8 +20,6 @@ form.addEventListener('submit', (event) => {
             content
         }
 
-    console.log('1' + JSON.stringify(updateReviews));
-
     fetch(API_URL, {
         method: 'POST',
         body: JSON.stringify(updateReviews),
@@ -31,7 +29,9 @@ form.addEventListener('submit', (event) => {
     }).then(response => response.json())
         .then(createdReview => {
             console.log(createdReview);
-            console.log('test from .then fetch of clientForm');
         });
+    console.log('after fetch');
     form.reset();
+    alert("Thanks for your review!");
+    location.reload();
 });
