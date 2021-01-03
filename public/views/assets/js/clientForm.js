@@ -30,7 +30,6 @@ form.addEventListener('submit', (event) => {
         .then(createdReview => {
             console.log(createdReview);
         });
-    console.log('after fetch');
     form.reset();
     alert("Thanks for your review!");
     location.reload();

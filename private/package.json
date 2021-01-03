@@ -10,6 +10,7 @@
   "author": "mrosa_2018358",
   "license": "ISC",
   "devDependencies": {
+    "bad-words": "^3.0.4",
     "fs": "0.0.1-security",
     "nodemon": "^2.0.6",
     "path": "^0.12.7"

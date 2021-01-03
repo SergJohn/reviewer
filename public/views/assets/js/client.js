@@ -108,11 +108,10 @@ async function bookRender(data) {
 
         // Calling function to get the available reviews
         let availableReviews = await requestReview();
-        // console.log(availableReviews);
 
         for (var j = 0; j < availableReviews.length; j++) {
-            // Creating element to add the reviews
 
+            // Creating element to add the reviews
             let contentDiv = document.createElement('DIV');
             contentDiv.classList.add('distintc');
 
