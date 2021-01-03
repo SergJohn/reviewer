@@ -20,10 +20,10 @@ function requestBooks() {
 }
 
 async function bookRender(data) {
-    console.log(data.books[0]);
+    console.log(data);
 
 
-    for (var i = 0; i < data.books.length; i++) {
+    for (var i = 0; i < data.length; i++) {
 
         // Creating an external DIV to hold the books data to be displayed
         let div = document.createElement('DIV');
@@ -33,7 +33,7 @@ async function bookRender(data) {
         let h1 = document.createElement('H1');
         h1.classList.add('text-light');
         h1.classList.add('text-uppercase');
-        h1.innerHTML = data.books[i].title;
+        h1.innerHTML = data[i].title;
 
         // Appending book's name to the DIV
         div.appendChild(h1);
@@ -41,7 +41,7 @@ async function bookRender(data) {
         // Elemente to hold the author's name
         let h3 = document.createElement('H3');
         h3.classList.add('text-light');
-        h3.textContent = data.books[i].author;
+        h3.textContent = data[i].author;
 
         // Appending the author's name to the DIV
         div.appendChild(h3);
@@ -108,21 +108,21 @@ async function bookRender(data) {
 
         // Calling function to get the available reviews
         let availableReviews = await requestReview();
-        console.log(availableReviews.reviews[0]);
+        // console.log(availableReviews);
 
-        for (var j = 0; j < availableReviews.reviews.length; j++) {
+        for (var j = 0; j < availableReviews.length; j++) {
             // Creating element to add the reviews
 
             let contentDiv = document.createElement('DIV');
             contentDiv.classList.add('distintc');
 
             let nameh3 = document.createElement('h3');
-            nameh3.innerHTML = availableReviews.reviews[j].name;
+            nameh3.innerHTML = availableReviews[j].name;
 
             let contentp = document.createElement('P');
-            contentp.innerHTML = availableReviews.reviews[j].content;
+            contentp.innerHTML = availableReviews[j].content;
 
-            if (availableReviews.reviews[j].book === data.books[i].title) {
+            if (availableReviews[j].book.toUpperCase() == data[i].title.toUpperCase()) {
                 contentDiv.appendChild(nameh3);
                 contentDiv.appendChild(contentp);
                 divToggle.appendChild(contentDiv);

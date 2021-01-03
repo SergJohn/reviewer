@@ -1,19 +1,22 @@
-{
-    "reviews": [
-        {
-            "book": "The Stranger",
-            "name": "Mario",
-            "content": "The best book I have read"
-        },
-        {
-            "book": "The Stranger",
-            "name": "Albert",
-            "content": "I loved to write this book"
-        },
-        {
-            "book": "The old and the sea",
-            "name": "Juliet",
-            "content": "Nice book, very descriptive"
-        }
-    ]
-}
+[
+ {
+  "book": "The Stranger",
+  "name": "Mario",
+  "content": "The best book I have read"
+ },
+ {
+  "book": "The Stranger",
+  "name": "Albert",
+  "content": "I loved to write this book"
+ },
+ {
+  "book": "The old and the sea",
+  "name": "Juliet",
+  "content": "Nice book, very descriptive"
+ },
+ {
+  "book": "THE KARAMAZOV'S BROTHERS",
+  "name": "cavaloDoido",
+  "content": "Dope!"
+ }
+]

@@ -1,7 +1,6 @@
-{
-    "books": [
+[
         {
-            "id": 1,
+            "id": 1,    
             "title": "The old and the sea",
             "author": "Ernest Hemingway" 
         },
@@ -15,5 +14,4 @@
             "title": "The Stranger",
             "author": "Albert Camus" 
         }
-    ]
-}
+]
