@@ -3,10 +3,15 @@ console.log('client javascript running');
 const booksElement = document.getElementById('books');
 const xhttp = new XMLHttpRequest();
 
+/** 
+ * Using an IIFE (Immediately Invoked Function Expression)
+ * Calling inside the requestBooks() function
+ * */ 
 (function () {
     requestBooks();
 }());
 
+// Making a XML HTTP request to the Server
 function requestBooks() {
 
     xhttp.onreadystatechange = function () {
@@ -19,6 +24,7 @@ function requestBooks() {
     xhttp.send();
 }
 
+// Async function to render the book
 async function bookRender(data) {
     console.log(data);
 
@@ -121,6 +127,7 @@ async function bookRender(data) {
             let contentp = document.createElement('P');
             contentp.innerHTML = availableReviews[j].content;
 
+// Transformed the data in UPPERCASE to be able to compare with user input even when typed LOWERCASE
             if (availableReviews[j].book.toUpperCase() == data[i].title.toUpperCase()) {
                 contentDiv.appendChild(nameh3);
                 contentDiv.appendChild(contentp);
@@ -131,6 +138,7 @@ async function bookRender(data) {
 
     }
 
+// Async funtion to get the available reviews
     async function requestReview() {
 
         let test = await fetch('/get/reviews')
